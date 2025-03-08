@@ -23,7 +23,11 @@ Accurate SOC estimation is critical for Battery Management Systems (BMS) in elec
  - Run the model parameters file "model_parameters.m"
  - Install the driving cycle application by running the file ./drivecycle_/install.m
  - Open the Simulink file "soc_estimation.slx" to run the simulation
- - Use the MATLAB files "driving_cycle_smo_plots.m" and "plots_battery_modeling.m" to plot the results depending on the current profile
+ - Use the MATLAB files "plots_battery_modeling.m" and "observerplot_modified.m" to plot the results from cell model and the observer model under constant current discharge. Here simulation time must be set to 8880secs.
+ - Use the MATLAB files "battery_model_plots_under_UDDS_profile.m" and "observers_plots_under_UDDS_profile.m" to plot the results from cell model and the observer model under UDDS profile. Here simulation time must be set 
+   to 25000secs.
+ - Use the MATLAB files "SM_ST_Convergence_error.m" to plot the convergence curve and get the error table.
+ - Use the MATLAB files "UDDS_drive_cycle_plot.m" to plot One UDDS cycle with corresponding current profile here simulation time is set to 1400 secs
  
 Results for the Li-ion battery modeling for a pulsed discharging profile. 
 
