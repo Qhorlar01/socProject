@@ -1,10 +1,25 @@
-# Lithium-ion Battery State of Charge (SOC) Estimation using Sliding Mode Observer (SMO)
+# State of Charge (SOC) Estimation for Li-Pb Batteries
 
-One of the most important features of a BMS is the accurate estimation of the SOC. The BMS controls the charging of battery as per the battery properties and the charge state of the battery. It controls the battery discharging on the basis of the load demand and the charge available in the battery systems. The battery cell voltage levels need to be measured by the BMS to estimate the charge states of the battery cells and to protect the cells from overcharging and undercharging.
+This repository contains the implementation and simulation of three observers—Luenberger, Sliding Mode (SMO), and Super Twisting Observer (STO)—for estimating the State of Charge (SOC) of Lithium-ion batteries. The project compares their performance under constant current and Urban Dynamometer Driving Schedule (UDDS) discharge profiles.
 
-The SOC is defined as the ratio between the remaining energy capacity and the actual energy capacity of the battery. The remaining energy is the maximum available capacity in the battery after a specific period of time, and the degradation of electrochemical properties caused by cycling and corrosion has influence in its value. The actual energy is the maximum possible limit of charge in the battery obtained during the initial charge and discharge cycle considering different environmental conditions. Battery SOC does the similar operation of the fuel gauge in a gasoline-driven vehicle which indicates how much energy is left inside a battery to power a vehicle.
+## Description
+Accurate SOC estimation is critical for Battery Management Systems (BMS) in electric vehicles. This work evaluates three model-based observers using an RC equivalent circuit battery model. Key contributions include:
+- Implementation of Luenberger, SMO, and STO observers.
+- Performance analysis using Integral Squared Error (ISE) and Integral Absolute Error (IAE).
+- Simulations under constant current and dynamic UDDS profiles to assess convergence speed and robustness.
+  
+## Key Features
+- **Battery Modeling**: Resistor-Capacitor (RC) equivalent circuit with parameter extraction.
+- **Observers**:
+  - **Luenberger Observer**: Linear state estimation with feedback correction.
+  - **Sliding Mode Observer (SMO)**: Robust against modeling uncertainties with finite-time convergence.
+  - **Super Twisting Observer (STO)**: Reduces chattering effects inherent in SMO.
+- **Test Profiles**:
+  - Constant current discharge.
+  - Realistic UDDS cycle for dynamic current input.
+- **Performance Metrics**: ISE and IAE for terminal voltage, SOC, and polarization voltage.
 
-Steps to run the Simulink file "soc_estimation.slx":
+## Steps to run the Simulink file "soc_estimation.slx":
  - Run the model parameters file "model_parameters.m"
  - Install the driving cycle application running the file ./drivecycle_/install.m
  - Open the Simulink file "soc_estimation.slx" to run the simulation
