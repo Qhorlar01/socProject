@@ -21,7 +21,7 @@ Accurate SOC estimation is critical for Battery Management Systems (BMS) in elec
 
 ## Steps to run the Simulink file "soc_estimation.slx":
  - Run the model parameters file "model_parameters.m"
- - Install the driving cycle application running the file ./drivecycle_/install.m
+ - Install the driving cycle application by running the file ./drivecycle_/install.m
  - Open the Simulink file "soc_estimation.slx" to run the simulation
  - Use the MATLAB files "driving_cycle_smo_plots.m" and "plots_battery_modeling.m" to plot the results depending on the current profile
  
